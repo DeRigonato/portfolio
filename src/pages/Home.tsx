@@ -257,18 +257,18 @@ const projects = [
 
 // Lista de habilidades com ícones
 const skills = [
-  { name: 'React', icon: <ReactIcon /> },
-  { name: 'TypeScript', icon: <TypeScriptIcon /> },
-  { name: 'JavaScript', icon: <JavaScriptIcon /> },
-  { name: 'Node.js', icon: <NodeJsIcon /> },
-  { name: 'HTML5', icon: null },
-  { name: 'CSS3', icon: null },
-  { name: 'Golang', icon: <GolangIcon /> },
-  { name: 'PHP', icon: <PhpIcon /> },
-  { name: 'MongoDB', icon: null },
-  { name: 'PostgreSQL', icon: null },
-  { name: 'Git', icon: null },
-  { name: 'Rest API', icon: null },
+  { name: 'React', icon: <ReactIcon />, color: '#61DAFB' },
+  { name: 'TypeScript', icon: <TypeScriptIcon />, color: '#3178C6' },
+  { name: 'JavaScript', icon: <JavaScriptIcon />, color: '#F7DF1E', textColor: '#000000' },
+  { name: 'Node.js', icon: <NodeJsIcon />, color: '#339933' },
+  { name: 'HTML5', icon: null, color: '#E34F26' },
+  { name: 'CSS3', icon: null, color: '#1572B6' },
+  { name: 'Golang', icon: <GolangIcon />, color: '#00ADD8' },
+  { name: 'PHP', icon: <PhpIcon />, color: '#777BB4' },
+  { name: 'MongoDB', icon: null, color: '#47A248' },
+  { name: 'PostgreSQL', icon: null, color: '#336791' },
+  { name: 'Git', icon: null, color: '#F05032' },
+  { name: 'Rest API', icon: null, color: '#000000' },
 ];
 
 const Home: React.FC = () => {
@@ -339,6 +339,8 @@ const Home: React.FC = () => {
                     key={skill.name}
                     skill={skill.name}
                     icon={skill.icon}
+                    color={skill.color}
+                    textColor={skill.textColor}
                   />
                 ))}
               </SkillsContainer>

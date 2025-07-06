@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Badge = styled.span`
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+  background: #2a2a2a;
   color: #e0e0e0;
   padding: 0.6rem 1.2rem;
   border-radius: 30px;
@@ -19,7 +19,7 @@ const Badge = styled.span`
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #333 0%, #444 100%);
+    background: #333;
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 `;
@@ -27,11 +27,13 @@ const Badge = styled.span`
 interface SkillBadgeProps {
   skill: string;
   icon?: React.ReactElement | null;
+  color?: string;
+  textColor?: string;
 }
 
-export const SkillBadge: React.FC<SkillBadgeProps> = ({ skill, icon }) => {
+export const SkillBadge: React.FC<SkillBadgeProps> = ({ skill, icon, color, textColor }) => {
   return (
-    <Badge>
+    <Badge style={{ backgroundColor: color, color: textColor }}>
       {icon && <span style={{ marginRight: '8px' }}>{icon}</span>}
       {skill}
     </Badge>
