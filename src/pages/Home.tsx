@@ -269,14 +269,18 @@ const Home: React.FC = () => {
 
   // Efeito para detectar quando elementos entram na viewport
   useEffect(() => {
+    const currentSkillsRef = skillsRef.current;
+    const currentProjectsRef = projectsRef.current;
+    const currentContactRef = contactRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
-          if (entry.target === skillsRef.current) {
+          if (entry.target === currentSkillsRef) {
             setSkillsVisible(entry.isIntersecting);
-          } else if (entry.target === projectsRef.current) {
+          } else if (entry.target === currentProjectsRef) {
             setProjectsVisible(entry.isIntersecting);
-          } else if (entry.target === contactRef.current) {
+          } else if (entry.target === currentContactRef) {
             setContactVisible(entry.isIntersecting);
           }
         });
@@ -284,15 +288,11 @@ const Home: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    if (skillsRef.current) observer.observe(skillsRef.current);
-    if (projectsRef.current) observer.observe(projectsRef.current);
-    if (contactRef.current) observer.observe(contactRef.current);
+    if (currentSkillsRef) observer.observe(currentSkillsRef);
+    if (currentProjectsRef) observer.observe(currentProjectsRef);
+    if (currentContactRef) observer.observe(currentContactRef);
 
     return () => {
-      const currentSkillsRef = skillsRef.current;
-      const currentProjectsRef = projectsRef.current;
-      const currentContactRef = contactRef.current;
-
       if (currentSkillsRef) observer.unobserve(currentSkillsRef);
       if (currentProjectsRef) observer.unobserve(currentProjectsRef);
       if (currentContactRef) observer.unobserve(currentContactRef);
