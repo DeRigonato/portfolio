@@ -289,9 +289,13 @@ const Home: React.FC = () => {
     if (contactRef.current) observer.observe(contactRef.current);
 
     return () => {
-      if (skillsRef.current) observer.unobserve(skillsRef.current);
-      if (projectsRef.current) observer.unobserve(projectsRef.current);
-      if (contactRef.current) observer.unobserve(contactRef.current);
+      const currentSkillsRef = skillsRef.current;
+      const currentProjectsRef = projectsRef.current;
+      const currentContactRef = contactRef.current;
+
+      if (currentSkillsRef) observer.unobserve(currentSkillsRef);
+      if (currentProjectsRef) observer.unobserve(currentProjectsRef);
+      if (currentContactRef) observer.unobserve(currentContactRef);
     };
   }, []);
 
