@@ -7,7 +7,8 @@ const Card = styled.div`
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.4s ease;
-  width: 340px;
+  width: 100%;
+  max-width: 700px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   position: relative;
   
@@ -51,6 +52,13 @@ const ProjectImage = styled.div<{ imageUrl: string }>`
     height: 50%;
     background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
   }
+`;
+
+const Divider = styled.hr`
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 1.5rem 0;
 `;
 
 const ContentWrapper = styled.div`
@@ -130,6 +138,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <ProjectImage imageUrl={imageUrl} />
       <ContentWrapper>
         <ProjectTitle>{title}</ProjectTitle>
+        <Divider />
         <ProjectDescription>{description}</ProjectDescription>
         <ButtonsWrapper>
           <ViewButton to={`/project/${id}`}>View Details</ViewButton>

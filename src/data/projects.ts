@@ -1,11 +1,16 @@
 export const projects = [
   {
-    id: 1,
-    title: "Whatsapp Weather",
-    description: "Aplicação em  Node.js que consome API de clima e avisa caso chova por Whatsapp via CallmeBot ",
-    stack: ["Node.Js", "React", "RestAPI"],
-    challenge: "Estabelecer comunicação entre duas API's ",
-    githubUrl: "https://github.com/DeRigonato/whatsapp-weather"
+    id: '1',
+    title: 'Course platform',
+    description: 'A full-stack course platform with user authentication, product catalog, and payment processing.',
+    imageUrl: 'https://via.placeholder.com/600x400/1a1a1a/61dafb?text=E-commerce+Project',
+    githubUrl: 'https://github.com/DeRigonato/courseflix'
   },
-  // Adicione outros projetos
+  {
+    id: '2',
+    title: 'DevBook',
+    description: 'Built a simple social media backend using Go and MySQL. The project includes a basic HTML/CSS/JS front-end for API interaction.',
+    imageUrl: 'https://via.placeholder.com/600x400/1a1a1a/61dafb?text=Task+Management',
+    githubUrl: 'https://github.com/DeRigonato/DevBook'
+  }
 ];

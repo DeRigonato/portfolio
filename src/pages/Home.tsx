@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Header } from '../components/Header';
 import { ProjectCard } from '../components/ProjectCard';
 import { SkillBadge } from '../components/SkillBadge';
+import { projects } from '../data/projects';
 import {
   ReactIcon,
   TypeScriptIcon,
@@ -237,23 +238,7 @@ const FadeInSection = styled.div<{ isVisible: boolean }>`
   transition: opacity 0.8s ease, transform 0.8s ease;
 `;
 
-// Dados de projetos atualizados com URLs de GitHub
-const projects = [
-  {
-    id: '1',
-    title: 'Course platform',
-    description: 'A full-stack course platform with user authentication, product catalog, and payment processing.',
-    imageUrl: 'https://via.placeholder.com/600x400/1a1a1a/61dafb?text=E-commerce+Project',
-    githubUrl: 'https://github.com/DeRigonato/courseflix'
-  },
-  {
-    id: '2',
-    title: 'DevBook',
-    description: 'Built a simple social media backend using Go and MySQL. The project includes a basic HTML/CSS/JS front-end for API interaction.',
-    imageUrl: 'https://via.placeholder.com/600x400/1a1a1a/61dafb?text=Task+Management',
-    githubUrl: 'https://github.com/DeRigonato/DevBook'
-  }
-];
+
 
 // Lista de habilidades com ícones
 const skills = [
