@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Header } from '../components/Header';
 
 const ProjectContainer = styled.div`
-  padding: 2rem 5%;
+  padding: 8rem 5% 2rem;
   background: #0d0d0d;
   color: white;
   min-height: 100vh;

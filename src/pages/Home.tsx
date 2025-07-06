@@ -241,25 +241,18 @@ const FadeInSection = styled.div<{ isVisible: boolean }>`
 const projects = [
   {
     id: '1',
-    title: 'E-commerce Website',
-    description: 'A full-stack e-commerce platform with user authentication, product catalog, and payment processing.',
+    title: 'Course platform',
+    description: 'A full-stack course platform with user authentication, product catalog, and payment processing.',
     imageUrl: 'https://via.placeholder.com/600x400/1a1a1a/61dafb?text=E-commerce+Project',
-    githubUrl: 'https://github.com/andregotardo'
+    githubUrl: 'https://github.com/DeRigonato/courseflix'
   },
   {
     id: '2',
-    title: 'Task Management App',
-    description: 'A productivity app for managing daily tasks with drag-and-drop interface and real-time updates.',
+    title: 'DevBook',
+    description: 'Built a simple social media backend using Go and MySQL. The project includes a basic HTML/CSS/JS front-end for API interaction.',
     imageUrl: 'https://via.placeholder.com/600x400/1a1a1a/61dafb?text=Task+Management',
-    githubUrl: 'https://github.com/andregotardo'
-  },
-  {
-    id: '3',
-    title: 'Portfolio Website',
-    description: 'A responsive portfolio website built with React and TypeScript showcasing my projects and skills.',
-    imageUrl: 'https://via.placeholder.com/600x400/1a1a1a/61dafb?text=Portfolio+Website',
-    githubUrl: 'https://github.com/andregotardo'
-  },
+    githubUrl: 'https://github.com/DeRigonato/DevBook'
+  }
 ];
 
 // Lista de habilidades com ícones
@@ -329,7 +322,7 @@ const Home: React.FC = () => {
           </Subtitle>
           <ActionButtons>
             <PrimaryButton href="#contact">Contact Me</PrimaryButton>
-            <SecondaryButton href="/resume.pdf" target="_blank">Download CV</SecondaryButton>
+            <SecondaryButton href="/CurriculoDev.pdf" target="_blank">Download CV</SecondaryButton>
           </ActionButtons>
         </HeroSection>
 

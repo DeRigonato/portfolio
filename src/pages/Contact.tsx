@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
-import { 
-  GitHubIcon, 
-  LinkedInIcon, 
-  EnvelopeIcon, 
-  PhoneIcon, 
-  WhatsappIcon 
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  EnvelopeIcon,
+  PhoneIcon,
+  WhatsappIcon
 } from '../components/Icons';
 import emailjs from '@emailjs/browser';
 
@@ -226,20 +226,19 @@ const Contact: React.FC = () => {
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<{ message: string; isError: boolean } | null>(null);
-  
+
   const form = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setFormStatus(null);
-    
-    // Substitua com suas credenciais do EmailJS
+
     emailjs.sendForm(
-      'YOUR_SERVICE_ID', 
-      'YOUR_TEMPLATE_ID', 
-      form.current!, 
-      'YOUR_PUBLIC_KEY'
+      'service_8hqlxjw',
+      'template_1fov9bi',
+      form.current!,
+      'Th0iAFOe8oTyeIz3B'
     )
       .then((result) => {
         setFormStatus({
@@ -268,64 +267,64 @@ const Contact: React.FC = () => {
       <ContactContainer>
         <ContactTitle>Entre em Contato</ContactTitle>
         <ContactSubtitle>
-          Estou sempre aberto a novas oportunidades, colaborações e conversas. 
+          Estou sempre aberto a novas oportunidades, colaborações e conversas.
           Sinta-se à vontade para entrar em contato comigo por qualquer um dos meios abaixo.
         </ContactSubtitle>
-        
+
         <ContactContent>
           <ContactFormSection>
             <ContactForm ref={form} onSubmit={handleSubmit}>
               <FormGroup>
                 <FormLabel htmlFor="name">Nome</FormLabel>
-                <FormInput 
-                  type="text" 
-                  id="name" 
-                  name="name" 
+                <FormInput
+                  type="text"
+                  id="name"
+                  name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  required 
+                  required
                 />
               </FormGroup>
-              
+
               <FormGroup>
                 <FormLabel htmlFor="email">Email</FormLabel>
-                <FormInput 
-                  type="email" 
-                  id="email" 
-                  name="email" 
+                <FormInput
+                  type="email"
+                  id="email"
+                  name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required 
+                  required
                 />
               </FormGroup>
-              
+
               <FormGroup>
                 <FormLabel htmlFor="subject">Assunto</FormLabel>
-                <FormInput 
-                  type="text" 
-                  id="subject" 
-                  name="subject" 
+                <FormInput
+                  type="text"
+                  id="subject"
+                  name="subject"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
-                  required 
+                  required
                 />
               </FormGroup>
-              
+
               <FormGroup>
                 <FormLabel htmlFor="message">Mensagem</FormLabel>
-                <FormTextarea 
-                  id="message" 
-                  name="message" 
+                <FormTextarea
+                  id="message"
+                  name="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  required 
+                  required
                 />
               </FormGroup>
-              
+
               <SubmitButton type="submit" disabled={isSubmitting}>
                 {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
               </SubmitButton>
-              
+
               {formStatus && (
                 <FormStatus isError={formStatus.isError}>
                   {formStatus.message}
@@ -333,11 +332,11 @@ const Contact: React.FC = () => {
               )}
             </ContactForm>
           </ContactFormSection>
-          
+
           <ContactInfoSection>
             <ContactInfoCard>
               <ContactInfoTitle>Informações de Contato</ContactInfoTitle>
-              
+
               <ContactInfoList>
                 <ContactInfoItem>
                   <EnvelopeIcon />
@@ -345,14 +344,14 @@ const Contact: React.FC = () => {
                     <a href="mailto:al.g.regonato@gmail.com">al.g.regonato@gamil.com</a>
                   </ContactInfoText>
                 </ContactInfoItem>
-                
+
                 <ContactInfoItem>
                   <PhoneIcon />
                   <ContactInfoText>
                     <a href="tel:+5511991342327">+55 (11) 99134-2327</a>
                   </ContactInfoText>
                 </ContactInfoItem>
-                
+
                 <ContactInfoItem>
                   <WhatsappIcon />
                   <ContactInfoText>
@@ -362,13 +361,13 @@ const Contact: React.FC = () => {
                   </ContactInfoText>
                 </ContactInfoItem>
               </ContactInfoList>
-              
+
               <ContactInfoTitle>Redes Sociais</ContactInfoTitle>
               <SocialLinks>
-                <SocialLink href="https://github.com/andregotardo" target="_blank" aria-label="GitHub">
+                <SocialLink href="https://github.com/DeRigonato" target="_blank" aria-label="GitHub">
                   <GitHubIcon />
                 </SocialLink>
-                <SocialLink href="https://linkedin.com/in/andregotardo" target="_blank" aria-label="LinkedIn">
+                <SocialLink href="https://www.linkedin.com/in/andr%C3%A9-rigonato-91979727b/" target="_blank" aria-label="LinkedIn">
                   <LinkedInIcon />
                 </SocialLink>
               </SocialLinks>
