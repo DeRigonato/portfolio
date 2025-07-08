@@ -12,7 +12,8 @@ import {
   GitHubIcon,
   LinkedInIcon,
   GolangIcon,
-  PhpIcon
+  PhpIcon,
+  PythonIcon
 } from '../components/Icons';
 
 // Hero Section com animação e design mais moderno
@@ -249,6 +250,7 @@ const skills = [
   { name: 'HTML5', icon: null, color: '#E34F26' },
   { name: 'CSS3', icon: null, color: '#1572B6' },
   { name: 'Golang', icon: <GolangIcon />, color: '#00ADD8' },
+  { name: 'Python', icon: <PythonIcon />, color: '#3776AB' },
   { name: 'PHP', icon: <PhpIcon />, color: '#777BB4' },
   { name: 'MongoDB', icon: null, color: '#47A248' },
   { name: 'PostgreSQL', icon: null, color: '#336791' },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconType } from 'react-icons';
-import { FaReact, FaNodeJs, FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaWhatsapp, FaPhp } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaWhatsapp, FaPhp, FaPython } from 'react-icons/fa';
 import { SiTypescript, SiJavascript, SiGo } from 'react-icons/si';
 
 // Componente genérico para renderizar qualquer ícone
@@ -23,3 +23,4 @@ export const WhatsappIcon = (): React.ReactElement => <IconWrapper Icon={FaWhats
 // Adicione os novos ícones
 export const GolangIcon = (): React.ReactElement => <IconWrapper Icon={SiGo} />;
 export const PhpIcon = (): React.ReactElement => <IconWrapper Icon={FaPhp} />;
+export const PythonIcon = (): React.ReactElement => <IconWrapper Icon={FaPython} />;
