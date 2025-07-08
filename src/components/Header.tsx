@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -92,9 +92,25 @@ const NavMenu = styled.nav<{ isOpen: boolean }>`
   }
 `;
 
+const CloseMenuButton = styled.button`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+`;
+
 export const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,17 +125,34 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen]);
+
   return (
     <HeaderContainer scrolled={scrolled}>
       <Logo to="/">
         <span>André Gotardo Dev</span>
       </Logo>
 
-      <MobileMenuButton onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? '✕' : '☰'}
+      <MobileMenuButton onClick={() => setMenuOpen(true)}>
+        {'☰'}
       </MobileMenuButton>
 
-      <NavMenu isOpen={menuOpen}>
+      <NavMenu isOpen={menuOpen} ref={navRef}>
+        <CloseMenuButton onClick={() => setMenuOpen(false)}>✕</CloseMenuButton>
         <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
         <NavLink to="/projects" onClick={() => setMenuOpen(false)}>Projects</NavLink>
         <NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink>

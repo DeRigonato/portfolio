@@ -45,17 +45,17 @@ const ProjectDescription = styled.div`
 const projectsData = [
   {
     id: '1',
-    title: 'E-commerce Website',
-    description: 'A full-stack e-commerce platform built with React and Node.js. Features include product listings, shopping cart, user authentication, and payment processing.',
+    title: 'Courseflix',
+    description: 'This project consists of the development of a complete online course platform, designed to offer a seamless and secure learning experience for users and simplified content management for instructors. This robust and modern web application was built using a cutting-edge technology stack, demonstrating proficiency across the entire development cycle, from back-end design to the implementation of a reactive and intuitive user interface.',
     imageUrl: 'https://via.placeholder.com/800x400',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
+    technologies: ['React', 'Node.js', 'Express', 'Next.js', 'Mux', 'PostgreeSQL', 'PrismaORM', 'Stripe'],
   },
   {
     id: '2',
-    title: 'Task Management App',
-    description: 'A productivity app for managing daily tasks and projects. Users can create, organize, and track their tasks with features like due dates, priorities, and categories.',
+    title: 'DevBook',
+    description: 'This project demonstrates the construction of a robust and efficient back-end for a social network, utilizing Go (Golang) to develop a complete RESTful API. The focus was on creating a high-performance server architecture capable of managing the fundamental operations of a social platform.',
     imageUrl: 'https://via.placeholder.com/800x400',
-    technologies: ['React', 'TypeScript', 'Firebase'],
+    technologies: ['Golang', 'MySQL', 'Bcrypt'],
   },
   {
     id: '3',
@@ -69,7 +69,7 @@ const projectsData = [
 const ProjectDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const project = projectsData.find(p => p.id === id);
-  
+
   if (!project) {
     return (
       <>
@@ -81,7 +81,7 @@ const ProjectDetails: React.FC = () => {
       </>
     );
   }
-  
+
   return (
     <>
       <Header />
